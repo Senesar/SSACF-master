@@ -173,6 +173,7 @@ elseif CLIENT then
 end
 
 include("acf/shared/rounds/roundap.lua")
+include("acf/shared/rounds/roundapcr.lua")
 include("acf/shared/rounds/roundaphe.lua")
 include("acf/shared/rounds/roundhe.lua")
 include("acf/shared/rounds/roundheat.lua")
@@ -181,7 +182,7 @@ include("acf/shared/rounds/roundhp.lua")
 include("acf/shared/rounds/roundsmoke.lua")
 include("acf/shared/rounds/roundrefill.lua")
 include("acf/shared/rounds/roundfunctions.lua")
-
+--AMMO GUNS GO HERE
 include("acf/shared/acfloader.lua")
 include("acf/shared/acfcratelist.lua")
 --include("acf/shared/acfmissilelist.lua")

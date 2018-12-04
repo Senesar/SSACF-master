@@ -98,7 +98,7 @@ ACF_defineGun("140mmC", {
 	}
 } )
 
---[[
+
 ACF_defineGun("170mmC", {
 	name = "170mm Cannon",
 	desc = "The 170mm fires a gigantic shell with ginormous penetrative capability, but has a glacial reload speed and an extremely hefty weight.",
@@ -112,4 +112,4 @@ ACF_defineGun("170mmC", {
 		propweight = 34
 	}
 } )
-]]--	
+	
