@@ -16,6 +16,7 @@ ACF_defineGun("60mmM", { --id
 	desc = "The 60mm is a common light infantry support weapon, with a high rate of fire but a puny payload.",
 	model = "models/mortar/mortar_60mm.mdl",
 	gunclass = "MO",
+  canparent = true,
 	caliber = 6.0,
 	weight = 60,
 	rofmod = 1.25,
@@ -31,6 +32,7 @@ ACF_defineGun("80mmM", {
 	desc = "The 80mm is a common infantry support weapon, with a good bit more boom than its little cousin.",
 	model = "models/mortar/mortar_80mm.mdl",
 	gunclass = "MO",
+  canparent = true,
 	caliber = 8.0,
 	weight = 120,
 	year = 1930,
@@ -45,6 +47,7 @@ ACF_defineGun("120mmM", {
 	desc = "The versatile 120 is sometimes vehicle-mounted to provide quick boomsplat to support the infantry.  Carries more boom in its boomsplat, has good HEAT performance, and is more accurate in high-angle firing.",
 	model = "models/mortar/mortar_120mm.mdl",
 	gunclass = "MO",
+  canparent = true,
 	caliber = 12.0,
 	weight = 640,
 	year = 1935,
@@ -59,6 +62,7 @@ ACF_defineGun("150mmM", {
 	desc = "The perfect balance between the 120mm and the 200mm. Can prove a worthy main gun weapon, as well as a mighty good mortar emplacement",
 	model = "models/mortar/mortar_150mm.mdl",
 	gunclass = "MO",
+  canparent = true,
 	caliber = 15.0,
 	weight = 1255,
 	year = 1945,
@@ -73,6 +77,7 @@ ACF_defineGun("200mmM", {
 	desc = "The 200mm is a beast, often used against fortifications.  Though enormously powerful, feel free to take a nap while it reloads",
 	model = "models/mortar/mortar_200mm.mdl",
 	gunclass = "MO",
+  canparent = true,
 	caliber = 20.0,
 	weight = 2850,
 	year = 1940,
@@ -82,12 +87,13 @@ ACF_defineGun("200mmM", {
 	}
 } )
 
---[[
+
 ACF_defineGun("280mmM", {
 	name = "280mm Mortar",
 	desc = "Massive payload, with a reload time to match. Found in rare WW2 siege artillery pieces. It's the perfect size for a jeep.",
 	model = "models/mortar/mortar_280mm.mdl",
 	gunclass = "MO",
+  canparent = true,
 	caliber = 28.0,
 	weight = 9035,
 	year = 1945,
@@ -96,4 +102,3 @@ ACF_defineGun("280mmM", {
 		propweight = 0.462 
 	}
 } )
-]]--
