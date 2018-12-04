@@ -22,8 +22,8 @@ ACF_defineGun("37mmC", { --id
 	rofmod = 1.4,
 	sound = "weapons/ACF_Gun/ac_fire4.wav",
 	round = {
-		maxlength = 48,
-		propweight = 1.125
+		maxlength = 48*2,
+		propweight = 1.125*2
 	}
 } )
 
@@ -37,8 +37,8 @@ ACF_defineGun("50mmC", {
 	year = 1935,
 	sound = "weapons/ACF_Gun/ac_fire4.wav",
 	round = {
-		maxlength = 63,
-		propweight = 2.1
+		maxlength = 63*2,
+		propweight = 2.1*2
 	}
 } )
 	
@@ -51,8 +51,8 @@ ACF_defineGun("75mmC", {
 	weight = 1420,
 	year = 1942,
 	round = {
-		maxlength = 78,
-		propweight = 3.8
+		maxlength = 78*2,
+		propweight = 3.8*2
 	}
 } )
 	
@@ -65,8 +65,8 @@ ACF_defineGun("100mmC", {
 	weight = 2750,
 	year = 1944,
 	round = {
-		maxlength = 93,
-		propweight = 9.5
+		maxlength = 93*2,
+		propweight = 9.5*2
 	}
 } )
 	
@@ -79,8 +79,8 @@ ACF_defineGun("120mmC", {
 	weight = 5200,
 	year = 1955,
 	round = {
-		maxlength = 110,
-		propweight = 18
+		maxlength = 110*2,
+		propweight = 18*2
 	}
 } )
 	
@@ -93,8 +93,8 @@ ACF_defineGun("140mmC", {
 	weight = 8180,
 	year = 1990,
 	round = {
-		maxlength = 127,
-		propweight = 28
+		maxlength = 127*2,
+		propweight = 28*2
 	}
 } )
 
@@ -108,8 +108,8 @@ ACF_defineGun("170mmC", {
 	weight = 12350,
 	year = 1990,
 	round = {
-		maxlength = 154,
-		propweight = 34
+		maxlength = 154*2,
+		propweight = 34*2
 	}
 } )
 	

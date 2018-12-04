@@ -30,14 +30,14 @@ function Round.convert( Crate, PlayerData )
 	
 	PlayerData, Data, ServerData, GUIData = ACF_RoundBaseGunpowder( PlayerData, Data, ServerData, GUIData )
 	
-	Data.ProjMass = Data.FrAera * (Data.ProjLength*12/1000) --Volume of the projectile as a cylinder * density of steel
-	Data.ShovePower = 0.05
+	Data.ProjMass = Data.FrAera * (Data.ProjLength*9/1000) --Volume of the projectile as a cylinder * density of steel
+	Data.ShovePower = 0.1
 	Data.PenAera = Data.FrAera^ACF.PenAreaMod
-	Data.DragCoef = ((Data.FrAera/5000)/Data.ProjMass)
-	Data.LimitVel = 1200										--Most efficient penetration speed in m/s
+	Data.DragCoef = ((Data.FrAera/15000)/Data.ProjMass)
+	Data.LimitVel = 1500										--Most efficient penetration speed in m/s
 	Data.KETransfert = 0.01									--Kinetic energy transfert to the target for movement purposes
 	Data.Ricochet = 50										--Base ricochet angle
-	Data.MuzzleVel = ACF_MuzzleVelocity( Data.PropMass, Data.ProjMass, Data.Caliber )
+	Data.MuzzleVel = ACF_MuzzleVelocity( (Data.PropMass*2), (Data.ProjMass*2), (Data.Caliber*2) )
 	
 	Data.BoomPower = Data.PropMass
 
@@ -57,7 +57,7 @@ end
 
 function Round.getDisplayData(Data)
 	local GUIData = {}
-	local Energy = ACF_Kinetic( Data.MuzzleVel*39.37 , Data.ProjMass, Data.LimitVel )
+	local Energy = ACF_Kinetic( Data.MuzzleVel*70 , Data.ProjMass, Data.LimitVel )
 	GUIData.MaxPen = (Energy.Penetration/Data.PenAera)*ACF.KEtoRHA
 	return GUIData
 end
@@ -122,7 +122,7 @@ function Round.propimpact( Index, Bullet, Target, HitNormal, HitPos, Bone )
 		if HitRes.Overkill > 0 then
 			table.insert( Bullet.Filter , Target )					--"Penetrate" (Ingoring the prop for the retry trace)
 			ACF_Spall( HitPos , Bullet.Flight , Bullet.Filter , Energy.Kinetic*HitRes.Loss , Bullet.Caliber , Target.ACF.Armour , Bullet.Owner ) --Do some spalling
-			Bullet.Flight = Bullet.Flight:GetNormalized() * (Energy.Kinetic*(1-HitRes.Loss)*2000/Bullet.ProjMass)^0.5 * 39.37
+			Bullet.Flight = Bullet.Flight:GetNormalized() * (Energy.Kinetic*(1-HitRes.Loss)*2000/Bullet.ProjMass)^0.5 * 70
 			return "Penetrated"
 		elseif HitRes.Ricochet then
 			return "Ricochet"
@@ -203,8 +203,8 @@ function Round.guicreate( Panel, Table )
 	acfmenupanel:CPanelText("Desc", "")	--Description (Name, Desc)
 	acfmenupanel:CPanelText("LengthDisplay", "")	--Total round length (Name, Desc)
 	
-	acfmenupanel:AmmoSlider("PropLength",0,0,1200,3, "Propellant Length", "")	--Propellant Length Slider (Name, Value, Min, Max, Decimals, Title, Desc)
-	acfmenupanel:AmmoSlider("ProjLength",0,0,1200,3, "Projectile Length", "")	--Projectile Length Slider (Name, Value, Min, Max, Decimals, Title, Desc)
+	acfmenupanel:AmmoSlider("PropLength",0,0,3000,3, "Propellant Length", "")	--Propellant Length Slider (Name, Value, Min, Max, Decimals, Title, Desc)
+	acfmenupanel:AmmoSlider("ProjLength",0,0,3000,3, "Projectile Length", "")	--Projectile Length Slider (Name, Value, Min, Max, Decimals, Title, Desc)
 	
 	acfmenupanel:AmmoCheckbox("Tracer", "Tracer", "")			--Tracer checkbox (Name, Title, Desc)
 	
