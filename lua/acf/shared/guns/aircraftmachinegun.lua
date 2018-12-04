@@ -4,7 +4,7 @@ ACF_defineGunClass("AAMG", {
 	name = "Aircraft Machinegun",
 	desc = "Aircraft MG's are light weight and with great ammo reserves, but with poor power.",
 	muzzleflash = "50cal_muzzleflash_noscale",
-	rofmod = 1.2,
+	rofmod = 0.6,
 	sound = "weapons/ACF_Gun/mg_fire4.wav",
 	soundNormal = "weapons/ACF_Gun/mg_fire4.wav",
 	soundDistance = "",
@@ -21,11 +21,11 @@ ACF_defineGun("7.62mmAAMG", { --id
 	weight = 12,
 	year = 1930,
 	rofmod = 1.59,
-	magsize = -1,
+	magsize = 1000,
 	magreload = 1,
 	round = {
-		maxlength = 13*1.2,
-		propweight = 0.03
+		maxlength = 13*0.8,
+		propweight = 0.8
 	}
 } )
 
@@ -39,11 +39,11 @@ ACF_defineGun("12.7mmAAMG", {
 	weight = 25,
 	year = 1910,
 	rofmod = 1.0,
-	magsize = 150,
-	magreload = 6,
+	magsize = 300,
+	magreload = 3,
 	round = {
-		maxlength = 15.8*1.2,
-		propweight = 0.07
+		maxlength = 15.8*0.8,
+		propweight = 0.8
 	}
 } )
 	
@@ -56,12 +56,12 @@ ACF_defineGun("14.5mmAAMG", {
 	caliber = 1.45,
 	weight = 36.5,
 	year = 1932,
-	rofmod = 0.85,
-	magsize = 90,
+	rofmod = 0.80,
+	magsize = 200,
 	magreload = 5,
 	round = {
-		maxlength = 19.5*1.2,
-		propweight = 0.010
+		maxlength = 19.5*0.8,
+		propweight = 0.8
 	}
 } )
 	
@@ -70,15 +70,15 @@ ACF_defineGun("20mmAAMG", {
 	desc = "The 20mm MG is practically a cannon in its own right; the weight and recoil made it difficult to mount on light land vehicles, though it was adapted for use on both aircraft and ships.",
 	model = "models/machinegun/machinegun_20mm.mdl",
 	gunclass = "AAMG",
+    canparent = true,
 	caliber = 2.0,
 	weight = 65,
 	year = 1935,
-  canparent = true,
-	rofmod = 0.73,
+	rofmod = 0.6,
 	magsize = 150,
-	magreload = 4,
+	magreload = 8,
 	round = {
-		maxlength = 22*1.2,
-		propweight = 0.012
+		maxlength = 22*0.8,
+		propweight = 0.8
 	}
 } )

@@ -1,6 +1,6 @@
 --define the class
 ACF_defineGunClass("C", {
-	spread = 0.08,
+	spread = 0.16,
 	name = "Cannon",
 	desc = "High velocity guns that can fire very powerful ammunition, but are rather slow to reload.",
 	muzzleflash = "120mm_muzzleflash_noscale",
@@ -16,13 +16,14 @@ ACF_defineGun("37mmC", { --id
     desc = "A light and fairly weak cannon with good accuracy.",
 	model = "models/tankgun/tankgun_37mm.mdl",
 	gunclass = "C",
+  canparent = true,
 	caliber = 3.7,
 	weight = 350,
 	year = 1919,
 	rofmod = 1.4,
 	sound = "weapons/ACF_Gun/ac_fire4.wav",
 	round = {
-		maxlength = 48*2,
+		maxlength = 48*1.2,
 		propweight = 1.125*2
 	}
 } )
@@ -32,12 +33,13 @@ ACF_defineGun("50mmC", {
 	desc = "The 50mm is surprisingly fast-firing, with good effectiveness against light armor, but a pea-shooter compared to its bigger cousins",
 	model = "models/tankgun/tankgun_50mm.mdl",
 	gunclass = "C",
+  canparent = true,
 	caliber = 5.0,
 	weight = 665,
 	year = 1935,
 	sound = "weapons/ACF_Gun/ac_fire4.wav",
 	round = {
-		maxlength = 63*2,
+		maxlength = 63*1.2,
 		propweight = 2.1*2
 	}
 } )
@@ -47,11 +49,12 @@ ACF_defineGun("75mmC", {
 	desc = "The 75mm is still rather respectable in rate of fire, but has only modest payload.  Often found on the Eastern Front, and on cold war light tanks.",
 	model = "models/tankgun/tankgun_75mm.mdl",
 	gunclass = "C",
+  canparent = true,
 	caliber = 7.5,
 	weight = 1420,
 	year = 1942,
 	round = {
-		maxlength = 78*2,
+		maxlength = 78*1.2,
 		propweight = 3.8*2
 	}
 } )
@@ -61,11 +64,12 @@ ACF_defineGun("100mmC", {
 	desc = "The 100mm was a benchmark for the early cold war period, and has great muzzle velocity and hitting power, while still boasting a respectable, if small, payload.",
 	model = "models/tankgun/tankgun_100mm.mdl",
 	gunclass = "C",
+  canparent = true,
 	caliber = 10.0,
 	weight = 2750,
 	year = 1944,
 	round = {
-		maxlength = 93*2,
+		maxlength = 93*1.2,
 		propweight = 9.5*2
 	}
 } )
@@ -75,11 +79,12 @@ ACF_defineGun("120mmC", {
 	desc = "Often found in MBTs, the 120mm shreds lighter armor with utter impunity, and is formidable against even the big boys.",
 	model = "models/tankgun/tankgun_120mm.mdl",
 	gunclass = "C",
+  canparent = true,
 	caliber = 12.0,
 	weight = 5200,
 	year = 1955,
 	round = {
-		maxlength = 110*2,
+		maxlength = 110*1.2,
 		propweight = 18*2
 	}
 } )
@@ -89,11 +94,12 @@ ACF_defineGun("140mmC", {
 	desc = "The 140mm fires a massive shell with enormous penetrative capability, but has a glacial reload speed and a very hefty weight.",
 	model = "models/tankgun/tankgun_140mm.mdl",
 	gunclass = "C",
+  canparent = true,
 	caliber = 14.0,
 	weight = 8180,
 	year = 1990,
 	round = {
-		maxlength = 127*2,
+		maxlength = 127*1.2,
 		propweight = 28*2
 	}
 } )
@@ -104,11 +110,12 @@ ACF_defineGun("170mmC", {
 	desc = "The 170mm fires a gigantic shell with ginormous penetrative capability, but has a glacial reload speed and an extremely hefty weight.",
 	model = "models/tankgun/tankgun_170mm.mdl",
 	gunclass = "C",
+  canparent = true,
 	caliber = 17.0,
 	weight = 12350,
 	year = 1990,
 	round = {
-		maxlength = 154*2,
+		maxlength = 154*1.2,
 		propweight = 34*2
 	}
 } )
