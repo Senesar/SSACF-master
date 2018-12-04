@@ -103,10 +103,10 @@ if file.Exists("acf/shared/acf_userconfig.lua", "LUA") then
 end
 
 
-CreateConVar('sbox_max_acf_gun', 16)
-CreateConVar('sbox_max_acf_smokelauncher', 10)
-CreateConVar('sbox_max_acf_ammo', 32)
-CreateConVar('sbox_max_acf_misc', 32)
+CreateConVar('sbox_max_acf_gun', 20)
+CreateConVar('sbox_max_acf_smokelauncher', 16)
+CreateConVar('sbox_max_acf_ammo', 40)
+CreateConVar('sbox_max_acf_misc', 40)
 CreateConVar('acf_meshvalue', 1)
 CreateConVar("sbox_acf_restrictinfo", 1) -- 0=any, 1=owned
 

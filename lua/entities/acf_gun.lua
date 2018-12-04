@@ -130,7 +130,7 @@ function ENT:Initialize()
 	self.LastSend = 0
 	self.LastLoadDuration = 0
 	self.Owner = self
-	self.Parentable = false
+	self.Parentable = true
 	
 	self.IsMaster = true
 	self.AmmoLink = {}
