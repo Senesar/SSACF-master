@@ -271,7 +271,7 @@ function ACFHomeGUICreate( Table )
 
 	end
 	
-	acfmenupanel["CData"]["VersionText"]:SetText("ACF Is "..versionstring.."!\n\n\n\n")
+	acfmenupanel["CData"]["VersionText"]:SetText("Solid Steel ACF Is "..versionstring.."!\n\n\n\n")
 	acfmenupanel["CData"]["VersionText"]:SetDark( true )
 	acfmenupanel["CData"]["VersionText"]:SetColor(color) 
 	acfmenupanel["CData"]["VersionText"]:SizeToContents() 
