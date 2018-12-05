@@ -680,7 +680,7 @@ function ENT:CheckLegal()
 	
 	self.RootParent = nil
 	-- if not parented then its legal
-	if not IsValid(self:GetParent()) then return true end
+if not IsValid(self:GetParent()) then return true end
 	
 	local rootparent = ACF_GetPhysicalParent(self)
 	

@@ -443,7 +443,7 @@ function ENT:Think()
 end
 
 function ENT:CheckLegal()
-
+-- LOOK HERE FOR CODE CHANGE
 	--make sure it's not invisible to traces
 	if not self:IsSolid() then return false end
 	
@@ -451,16 +451,16 @@ function ENT:CheckLegal()
 	if self:GetPhysicsObject():GetMass() < self.Weight then return false end
 	
 	-- if it's not parented we're fine
-	if not IsValid( self:GetParent() ) then return true end
+  if not IsValid( self:GetParent() ) then return true end
 	
 	local rootparent = ACF_GetPhysicalParent(self)
 
 	--make sure it's welded to root parent
 	for k, v in pairs( constraint.FindConstraints( self, "Weld" ) ) do
-		if v.Ent1 == rootparent or v.Ent2 == rootparent then return true end
+		if v.Ent1 == rootparent or v.Ent2 == rootparent then return false end
 	end
 	
-	return false
+	return true
 	
 end
 

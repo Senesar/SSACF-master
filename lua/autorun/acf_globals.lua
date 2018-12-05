@@ -45,7 +45,7 @@ ACF.MVScale = 0.5  --Propellant to MV convertion expotential
 ACF.PDensity = 1.6	--Gun propellant density (Real powders go from 0.7 to 1.6, i'm using higher densities to simulate case bottlenecking)
 
 ACF.TorqueBoost = 1.25 --torque multiplier from using fuel
-ACF.FuelRate = 5  --multiplier for fuel usage, 1.0 is approx real world
+ACF.FuelRate = 1  --multiplier for fuel usage, 1.0 is approx real world
 ACF.ElecRate = 1.5 --multiplier for electrics
 ACF.TankVolumeMul = 0.5 -- multiplier for fuel tank capacity, 1.0 is approx real world
 
@@ -91,7 +91,7 @@ ACF.RefillDistance = 300 --Distance in which ammo crate starts refilling.
 ACF.RefillSpeed = 700 -- (ACF.RefillSpeed / RoundMass) / Distance 
 
 ACF.DebrisScale = 20 -- Ignore debris that is less than this bounding radius.
-ACF.SpreadScale = 4		-- The maximum amount that damage can decrease a gun's accuracy.  Default 4x
+ACF.SpreadScale = 20		-- The maximum amount that damage can decrease a gun's accuracy.  Default 4x
 ACF.GunInaccuracyScale = 1 -- A multiplier for gun accuracy.
 ACF.GunInaccuracyBias = 2  -- Higher numbers make shots more likely to be inaccurate.  Choose between 0.5 to 4. Default is 2 (unbiased).
 
