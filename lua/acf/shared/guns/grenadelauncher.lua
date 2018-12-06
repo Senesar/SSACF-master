@@ -24,6 +24,6 @@ ACF_defineGun("40mmGL", { --id
 	year = 1970,
 	round = {
 		maxlength = 12.5,
-		propweight = 0.06
+		propweight = 0.034
 	}
 } )
