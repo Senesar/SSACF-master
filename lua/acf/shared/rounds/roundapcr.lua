@@ -30,14 +30,14 @@ function Round.convert( Crate, PlayerData )
 	
 	PlayerData, Data, ServerData, GUIData = ACF_RoundBaseGunpowder( PlayerData, Data, ServerData, GUIData )
 	
-	Data.ProjMass = Data.FrAera * (Data.ProjLength*9/1000) --Volume of the projectile as a cylinder * density of steel
+	Data.ProjMass = Data.FrAera * (Data.ProjLength*4/1000) --Volume of the projectile as a cylinder * density of steel
 	Data.ShovePower = 0.1
 	Data.PenAera = Data.FrAera^ACF.PenAreaMod
 	Data.DragCoef = ((Data.FrAera/15000)/Data.ProjMass)
 	Data.LimitVel = 1500										--Most efficient penetration speed in m/s
 	Data.KETransfert = 0.01									--Kinetic energy transfert to the target for movement purposes
 	Data.Ricochet = 50										--Base ricochet angle
-	Data.MuzzleVel = ACF_MuzzleVelocity( (Data.PropMass*2), (Data.ProjMass*2), (Data.Caliber*2) )
+	Data.MuzzleVel = ACF_MuzzleVelocity( (Data.PropMass*5), (Data.ProjMass*5), (Data.Caliber*0.5) )
 	
 	Data.BoomPower = Data.PropMass
 
@@ -57,7 +57,7 @@ end
 
 function Round.getDisplayData(Data)
 	local GUIData = {}
-	local Energy = ACF_Kinetic( Data.MuzzleVel*70 , Data.ProjMass, Data.LimitVel )
+	local Energy = ACF_Kinetic( Data.MuzzleVel*50 , Data.ProjMass, Data.LimitVel )
 	GUIData.MaxPen = (Energy.Penetration/Data.PenAera)*ACF.KEtoRHA
 	return GUIData
 end
@@ -115,14 +115,14 @@ function Round.propimpact( Index, Bullet, Target, HitNormal, HitPos, Bone )
 
 	if ACF_Check( Target ) then
 	
-		local Speed = Bullet.Flight:Length() / ACF.VelScale * 1.6
+		local Speed = Bullet.Flight:Length() / ACF.VelScale * 3
 		local Energy = ACF_Kinetic( Speed , Bullet.ProjMass, Bullet.LimitVel )
 		local HitRes = ACF_RoundImpact( Bullet, Speed, Energy, Target, HitPos, HitNormal , Bone )
 		
 		if HitRes.Overkill > 0 then
 			table.insert( Bullet.Filter , Target )					--"Penetrate" (Ingoring the prop for the retry trace)
 			ACF_Spall( HitPos , Bullet.Flight , Bullet.Filter , Energy.Kinetic*HitRes.Loss , Bullet.Caliber , Target.ACF.Armour , Bullet.Owner ) --Do some spalling
-			Bullet.Flight = Bullet.Flight:GetNormalized() * (Energy.Kinetic*(1-HitRes.Loss)*2000/Bullet.ProjMass)^0.5 * 70
+			Bullet.Flight = Bullet.Flight:GetNormalized() * (Energy.Kinetic*(1-HitRes.Loss)*2000/Bullet.ProjMass)^0.5 * 39.37
 			return "Penetrated"
 		elseif HitRes.Ricochet then
 			return "Ricochet"

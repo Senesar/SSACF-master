@@ -2,19 +2,19 @@ ACF = {}
 ACF.AmmoTypes = {}
 ACF.MenuFunc = {}
 ACF.AmmoBlacklist = {}
-ACF.Version = 633 -- REMEMBER TO CHANGE THIS FOR GODS SAKE, OMFG!!!!!!! -wrex   Update the changelog too! -Ferv
+ACF.Version = 634 -- REMEMBER TO CHANGE THIS FOR GODS SAKE, OMFG!!!!!!! -wrex   Update the changelog too! -Ferv
 ACF.CurrentVersion = 0 -- just defining a variable, do not change
 
-ACF.Year = 1945
+ACF.Year = 2200
 
-ACF.Threshold = 264.7	--Health Divisor (don't forget to update cvar function down below)
-ACF.PartialPenPenalty = 5 --Exponent for the damage penalty for partial penetration
+ACF.Threshold = 530	--Health Divisor (don't forget to update cvar function down below) 264.7 default
+ACF.PartialPenPenalty = 1 --Exponent for the damage penalty for partial penetration
 ACF.PenAreaMod = 0.85
 ACF.KinFudgeFactor = 2.1	--True kinetic would be 2, over that it's speed biaised, below it's mass biaised
 ACF.KEtoRHA = 0.25		--Empirical conversion from (kinetic energy in KJ)/(Aera in Cm2) to RHA penetration
 ACF.GroundtoRHA = 0.15		--How much mm of steel is a mm of ground worth (Real soil is about 0.15)
 ACF.KEtoSpall = 1
-ACF.AmmoMod = 0.6		-- Ammo modifier. 1 is 1x the amount of ammo
+ACF.AmmoMod = 1		-- Ammo modifier. 1 is 1x the amount of ammo
 ACF.ArmorMod = 1
 ACF.SlopeEffectFactor = 1.1	-- Sloped armor effectiveness: armor / cos(angle)^factor
 ACF.Spalling = 0
@@ -46,8 +46,8 @@ ACF.PDensity = 1.6	--Gun propellant density (Real powders go from 0.7 to 1.6, i'
 
 ACF.TorqueBoost = 1.25 --torque multiplier from using fuel
 ACF.FuelRate = 1  --multiplier for fuel usage, 1.0 is approx real world
-ACF.ElecRate = 1.5 --multiplier for electrics
-ACF.TankVolumeMul = 0.5 -- multiplier for fuel tank capacity, 1.0 is approx real world
+ACF.ElecRate = 1 --multiplier for electrics
+ACF.TankVolumeMul = 1.0 -- multiplier for fuel tank capacity, 1.0 is approx real world
 
 
 
@@ -358,7 +358,7 @@ CreateConVar("acf_gunfire", 1)
 
 function ACF_CVarChangeCallback(CVar, Prev, New)
 	if( CVar == "acf_healthmod" ) then
-		ACF.Threshold = 264.7 / math.max(New, 0.01)
+		ACF.Threshold = 530 / math.max(New, 0.01) --264.7 default for threshold
 		print ("Health Mod changed to a factor of " .. New)
 	elseif( CVar == "acf_armormod" ) then
 		ACF.ArmorMod = 1 * math.max(New, 0)
