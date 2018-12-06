@@ -73,15 +73,15 @@ function Round.convert( Crate, PlayerData )
 
 	local GunClass = ACF.Weapons["Guns"][(Data["Id"] or PlayerData["Id"])]["gunclass"]
 	if GunClass == "SA" then
-		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*3-4.5),1,128)
+		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*3)+1,24,128)
 	elseif GunClass == "MO" then
-		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*4)-12,1,128)
+		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*4)+1,24,128)
 	elseif GunClass == "HW" then
-		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*4)-10,1,128)
+		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*4)+1,24,128)
 	else
-		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*4)-8,1,128)
+		Data["MaxFlechettes"] = math.Clamp(math.floor(Data["Caliber"]*4)+1,24,128)
 	end
-	Data["MinFlechettes"] = math.min(6,Data["MaxFlechettes"]) --force bigger guns to have higher min count
+	Data["MinFlechettes"] = math.min(24,Data["MaxFlechettes"]) --force bigger guns to have higher min count
 	Data["Flechettes"] = math.Clamp(math.floor(PlayerData["Data5"]),Data["MinFlechettes"], Data["MaxFlechettes"])  --number of flechettes
 	
 	Data["MinSpread"] = 3
@@ -334,5 +334,5 @@ function Round.guiupdate( Panel, Table )
 
 end
 
-list.Set( "ACFRoundTypes", "FL", Round )  --Set the round properties
-list.Set( "ACFIdRounds", Round.netid , "FL" ) --Index must equal the ID entry in the table above, Data must equal the index of the table above
+list.Set( "ACFRoundTypes", "CAN", Round )  --Set the round properties
+list.Set( "ACFIdRounds", Round.netid , "CAN" ) --Index must equal the ID entry in the table above, Data must equal the index of the table above

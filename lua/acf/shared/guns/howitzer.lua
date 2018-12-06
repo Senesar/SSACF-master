@@ -102,18 +102,18 @@ ACF_defineGun("240mmHW", {
 	}
 } )
 
-ACF_defineGun("290mmHW", {
-	name = "290mm Howitzer",
-	desc = " Mother of all howitzers. This 12in beast can be found on battleships. It WILL fuck your day up... when it reloads.",
+ACF_defineGun("406mmHW", {
+	name = "406mm Howitzer",
+	desc = " Mother of all howitzers. This 16in beast can be found on battleships. It WILL fuck your day up... when it reloads. Suitable for shelling Paris.",
 	model = "models/howitzer/howitzer_406mm.mdl",
 	gunclass = "HW",
   canparent = true,
-	caliber = 29,
-	weight = 24960,
+	caliber = 40.6,
+	weight = 32960,
 	year = 1900,
 	round = {
-		maxlength = 325,
-		propweight = 57.0
+		maxlength = 625,
+		propweight = 87.0
 	}
 } )
 	

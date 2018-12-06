@@ -13,7 +13,7 @@ ACF_defineGunClass("SL", {
 --add a gun to the class
 ACF_defineGun("40mmSL", { --id
 	name = "40mm Smoke Launcher",
-	desc = "Good for lobbing smoke shells or spraying canister around your vehicle. Can also be sued like a claymore.",
+	desc = "Good for lobbing smoke shells or spraying canister around your vehicle. Can also be used like a claymore.",
 	model = "models/launcher/40mmsl.mdl",
 	gunclass = "SL",
 	canparent = true,
@@ -22,7 +22,7 @@ ACF_defineGun("40mmSL", { --id
 	year = 1941,
 	round = {
 		maxlength = 17.5,
-		propweight = 0.001 
+		propweight = 0.01 
 	}
 } )
 
@@ -37,10 +37,10 @@ ACF_defineGun("40mmCL", { --id
 	weight = 20,
 	rofmod = 0.015,
 	magsize = 6,
-	magreload = 40,
+	magreload = 20,
 	year = 1950,
 	round = {
 		maxlength = 12,
-		propweight = 0.001
+		propweight = 0.01
 	}
 } )
