@@ -13,16 +13,16 @@ ACF_defineGunClass("SL", {
 --add a gun to the class
 ACF_defineGun("40mmSL", { --id
 	name = "40mm Smoke Launcher",
-	desc = "",
+	desc = "Good for lobbing smoke shells or spraying canister around your vehicle. Can also be sued like a claymore.",
 	model = "models/launcher/40mmsl.mdl",
 	gunclass = "SL",
 	canparent = true,
 	caliber = 4.0,
-	weight = 1,
+	weight = 5,
 	year = 1941,
 	round = {
 		maxlength = 17.5,
-		propweight = 0.000075 
+		propweight = 0.001 
 	}
 } )
 
